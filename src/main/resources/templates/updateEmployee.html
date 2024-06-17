@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Employee Management System</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Employee Management System</h1>
+		<hr>
+		<h2>Update Employee</h2>
+		
+		<form action="#" th:action ="@{/saveEmployee}" th:object="${employee}" method="POST">
+			<input type="hidden" th:field="*{id}"/>
+			First Name<input type="text" th:field = "*{firstName}"  class="form-control mb-4 col-4">
+			<span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+			Last Name<input type="text" th:field = "*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+			<span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+			Email<input type="text" th:field = "*{email}" placeholder="Email" class="form-control mb-4 col-4">
+			<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+			Age<input type="text" th:field = "*{age}" placeholder="Age" class="form-control mb-4 col-4">
+			<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+			Salary<input type="text" th:field = "*{salary}" placeholder="Salary" class="form-control mb-4 col-4">
+			<span th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
+			<div class="form-group mb-4 col-4">
+    <label for="gender">Gender:</label>
+    <select th:field="*{gender}" class="form-control">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+</div>
+			
+			
+			<button type="submit" class="btn btn-info col-2">Update Employee</button>
+		</form>
+		
+		<a th:href = "@{/index}"> Back to Employee List</a>
+	</div>
+</body>
+
+</html>

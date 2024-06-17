@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+        <hr>
+        <h2>Add Employee</h2>
+
+<form th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+
+
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-3" required>
+                <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-3" required>
+                <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" th:field="*{email}" placeholder="Email" class="form-control mb-3" required>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" th:field="*{age}" placeholder="Age" class="form-control mb-3" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select th:field="*{gender}" class="form-control mb-3" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="text" th:field="*{salary}" placeholder="Salary" class="form-control mb-3" required>
+            </div>
+
+            <button type="submit" class="btn btn-info">Add Employee</button>
+        </form>
+
+        <div th:if="${error}" class="alert alert-danger">
+            <p th:text="${error}"></p>
+        </div>
+
+        <a th:href="@{/index}">Back to Employee List</a>
+    </div>
+</body>
+
+</html>
