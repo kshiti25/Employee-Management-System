@@ -1,7 +1,7 @@
 # Employee Management System
 
 ## Overview
-The Employee Management System, developed in April 2024, is a comprehensive solution engineered using Spring Boot and Spring MVC. It is designed to enable efficient HR management with robust functionalities for adding, deleting, updating, and sorting employee profiles. This system streamlines administrative tasks and enhances data accuracy.
+The Employee Management System,is a comprehensive solution engineered using Spring Boot and Spring MVC. It is designed to enable efficient HR management with robust functionalities for adding, deleting, updating, and sorting employee profiles. This system streamlines administrative tasks and enhances data accuracy.
 
 ## Features
 - **Add Employee Profiles:** Easily add new employee profiles to the system.
